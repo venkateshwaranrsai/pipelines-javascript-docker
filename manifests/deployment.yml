@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "venskubernetes-5486"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "venskubernetes-5486"
+  template:
+    metadata:
+      labels:
+        app: "venskubernetes-5486"
+    spec:
+      containers:
+        - name: "venskubernetes-5486"
+          image: "venscontainerregistry.azurecr.io/venskubernetes"
+          ports:
+          - containerPort: 8080
